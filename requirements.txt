@@ -1,0 +1,5 @@
+pytest==8.3.5
+selenium==4.29.0
+requests==2.32.3
+locust==2.32.8
+python-dotenv==1.0.1
