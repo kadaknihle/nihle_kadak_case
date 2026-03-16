@@ -18,11 +18,9 @@ class CareersPage(BasePage):
     def go_to_qa_jobs(self) -> None:
 
         self.scroll_to(self.SEE_ALL_TEAMS_BUTTON)
-        self.wait_until_visible(self.SEE_ALL_TEAMS_BUTTON)
-        time.sleep(2)
-        self.click(self.SEE_ALL_TEAMS_BUTTON)
+        button = self.wait_until_clickable(self.SEE_ALL_TEAMS_BUTTON)
+        self.driver.execute_script("arguments[0].click();", button) # Cookies popup blocks the click so we execute script
 
         self.scroll_to(self.QA_TEAM_BUTTON)
-        time.sleep(2)
         self.wait_until_href_is_ready(self.QA_TEAM_BUTTON)
         self.click(self.QA_TEAM_BUTTON)
